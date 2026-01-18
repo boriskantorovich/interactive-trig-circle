@@ -1,0 +1,101 @@
+/**
+ * TableView component styles
+ * Per spec Section 5.2: Tufte-inspired design
+ * Component-based CSS with BEM-like naming: .component-name__element-name--modifier
+ */
+
+.table-view {
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border-light);
+  background-color: #fff;
+}
+
+.table-view__title {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-h2);
+  color: var(--color-text-dark);
+}
+
+.table-view__container {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+.table-view__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  /* Tufte-inspired: minimal borders, subtle grid */
+  border: 1px solid var(--color-border-subtle);
+}
+
+.table-view__header {
+  padding: var(--spacing-sm);
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  border-bottom: 2px solid var(--color-border-light);
+  background-color: var(--color-bg);
+}
+
+.table-view__row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.table-view__row:hover {
+  background-color: var(--color-bg);
+}
+
+.table-view__row:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* Highlighted row (nearest to current angle) */
+.table-view__row--highlighted {
+  background-color: rgba(0, 102, 204, 0.1); /* Light blue highlight */
+  font-weight: 500;
+}
+
+.table-view__row--highlighted:hover {
+  background-color: rgba(0, 102, 204, 0.15);
+}
+
+.table-view__cell {
+  padding: var(--spacing-sm);
+  text-align: left;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums; /* Align numbers consistently */
+}
+
+.table-view__cell--angle {
+  font-weight: 600;
+  color: var(--color-text-dark);
+  font-family: var(--font-ui);
+}
+
+/* Undefined values styling */
+.table-view__cell--undefined {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.table-view__hint {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-ui);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Responsive: Ensure table is readable on desktop */
+@media (min-width: 1024px) {
+  .table-view__table {
+    min-width: 600px;
+  }
+}

@@ -1,0 +1,70 @@
+/**
+ * Cofunction Identities styles
+ */
+
+.cofunction {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.cofunction__explanation {
+  line-height: 1.6;
+}
+
+.cofunction__key-concept {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #f0f0f0;
+  border-left: 3px solid #0066cc;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+.cofunction__formulas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+
+.cofunction__formula-card {
+  padding: 1em;
+  background-color: #f8f8f8;
+  border-left: 3px solid #0066cc;
+  border-radius: 4px;
+}
+
+.cofunction__formula-card h3 {
+  margin-top: 0;
+  color: #0066cc;
+}
+
+.cofunction__formula-text {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 0.5em 0;
+}
+
+.cofunction__calculation {
+  margin: 0.5em 0;
+  font-family: monospace;
+  color: #404040;
+  font-size: 0.95em;
+}
+
+.cofunction__visualization {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.cofunction__svg {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .cofunction__formulas {
+    grid-template-columns: 1fr;
+  }
+}

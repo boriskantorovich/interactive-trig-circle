@@ -1,0 +1,189 @@
+/* AngleControls component styles */
+/* Component-based CSS with BEM-like naming: .component-name__element-name--modifier */
+
+.angle-controls {
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border-light);
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.angle-controls__header {
+  margin-bottom: var(--spacing-md);
+}
+
+.angle-controls__header h3 {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 1.2em;
+  color: var(--color-text);
+}
+
+.angle-controls__message {
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  border-radius: 4px;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+}
+
+.angle-controls__message--error {
+  background-color: #fee;
+  color: #c00;
+  border: 1px solid #fcc;
+}
+
+.angle-controls__message--warning {
+  background-color: #ffe;
+  color: #c60;
+  border: 1px solid #fcc;
+}
+
+.angle-controls__message--info {
+  background-color: #eef;
+  color: #006;
+  border: 1px solid #ccf;
+}
+
+.angle-controls__unit-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: var(--color-bg);
+  border-radius: 4px;
+}
+
+.angle-controls__label {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.angle-controls__toggle-button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.angle-controls__toggle-button:hover {
+  background-color: #0052a3;
+}
+
+.angle-controls__toggle-button:active {
+  background-color: #003d7a;
+}
+
+.angle-controls__current-unit {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+  color: var(--color-text-secondary);
+}
+
+.angle-controls__slider-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.angle-controls__slider {
+  width: 100%;
+  margin: var(--spacing-sm) 0;
+  cursor: pointer;
+}
+
+.angle-controls__slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-xs);
+}
+
+.angle-controls__input-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.angle-controls__input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+  border: 1px solid var(--color-border-light);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.angle-controls__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.angle-controls__input--error {
+  border-color: #c00;
+  background-color: #fee;
+}
+
+.angle-controls__input-error {
+  margin-top: var(--spacing-xs);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #c00;
+}
+
+.angle-controls__input-hint {
+  margin-top: var(--spacing-xs);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.angle-controls__input-hint code {
+  background-color: var(--color-bg);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.angle-controls__presets {
+  margin-top: var(--spacing-md);
+}
+
+.angle-controls__preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.angle-controls__preset-button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+  background-color: #fff;
+  color: var(--color-text);
+  border: 1px solid var(--color-border-light);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  min-width: 50px;
+}
+
+.angle-controls__preset-button:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
+.angle-controls__preset-button:active {
+  background-color: var(--color-primary);
+  color: #fff;
+}

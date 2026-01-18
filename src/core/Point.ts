@@ -3,12 +3,13 @@
  * Per spec Section 4.3.2: Point/coordinate utilities
  */
 
-import { Angle } from './Angle';
+import { Angle, ANGLE_TOLERANCE } from './Angle';
 
 /**
  * Tolerance for unit circle check
+ * @deprecated Use ANGLE_TOLERANCE from './Angle' instead
  */
-export const UNIT_CIRCLE_TOLERANCE = 0.0001;
+export const UNIT_CIRCLE_TOLERANCE = ANGLE_TOLERANCE;
 
 /**
  * Point class for representing 2D coordinates

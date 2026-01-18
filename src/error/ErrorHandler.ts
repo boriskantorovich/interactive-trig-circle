@@ -1,7 +1,7 @@
 /**
  * ErrorHandler class
  * Per spec Section 4.3.7: Error handling utilities and user feedback
- * Implementation will be completed in Milestone 6
+ * Per milestone 6: Complete ErrorHandler implementation
  */
 
 export type ErrorType = 'error' | 'warning' | 'info';
@@ -13,26 +13,69 @@ export interface ErrorContext {
 }
 
 /**
+ * User message callback type
+ * Components can register callbacks to display user messages
+ */
+export type UserMessageCallback = (message: string, type: ErrorType) => void;
+
+/**
  * ErrorHandler class for handling calculation errors, input validation, and user feedback
  * Per spec Section 4.3.7
  */
 export class ErrorHandler {
+  private userMessageCallback: UserMessageCallback | null = null;
+
+  /**
+   * Register a callback for displaying user messages
+   * Components should call this to receive error messages
+   */
+  setUserMessageCallback(callback: UserMessageCallback): void {
+    this.userMessageCallback = callback;
+  }
+
+  /**
+   * Remove the user message callback
+   */
+  clearUserMessageCallback(): void {
+    this.userMessageCallback = null;
+  }
+
   /**
    * Handle calculation errors (mathematical edge cases, undefined values)
    * Per spec Section 8.3.2
    */
   handleCalculationError(error: Error, context: string): void {
-    console.error(`Calculation error in ${context}:`, error);
-    // Implementation in Milestone 6
+    const errorMessage = `Calculation error in ${context}: ${error.message}`;
+    console.error(errorMessage, error);
+    this.logError(error, { component: context, action: 'calculation' });
+    this.showUserMessage(
+      `A calculation error occurred: ${error.message}`,
+      'error'
+    );
   }
 
   /**
    * Handle input validation errors (user input format issues)
    * Per spec Section 8.3.1
+   * Per milestone 6: Complete implementation for angle input validation
    */
   handleInputError(invalidInput: string, expectedFormat: string): void {
-    console.error(`Input validation error: "${invalidInput}" does not match expected format: ${expectedFormat}`);
-    // Implementation in Milestone 6
+    const errorMessage = `Input validation error: "${invalidInput}" does not match expected format: ${expectedFormat}`;
+    console.error(errorMessage);
+    
+    // Create user-friendly error message
+    const userMessage = `Invalid input: "${invalidInput}". ${expectedFormat}`;
+    this.showUserMessage(userMessage, 'error');
+    
+    // Log error
+    this.logError(
+      new Error(errorMessage),
+      {
+        component: 'AngleControls',
+        action: 'inputValidation',
+        state: { invalidInput, expectedFormat },
+      }
+    );
   }
 
   /**
@@ -40,17 +83,30 @@ export class ErrorHandler {
    * Per spec Section 8.3.3
    */
   handleRenderingError(error: Error, element: string): void {
-    console.error(`Rendering error in ${element}:`, error);
-    // Implementation in Milestone 6
+    const errorMessage = `Rendering error in ${element}: ${error.message}`;
+    console.error(errorMessage, error);
+    this.logError(error, { component: element, action: 'rendering' });
+    this.showUserMessage(
+      `A rendering error occurred: ${error.message}`,
+      'error'
+    );
   }
 
   /**
    * Show user-friendly error message
    * Per spec Section 8.3.4
+   * Per milestone 6: Complete implementation with callback support
    */
   showUserMessage(message: string, type: ErrorType): void {
-    console.log(`[${type.toUpperCase()}] ${message}`);
-    // Implementation in Milestone 6
+    // Log to console in development
+    if (import.meta.env.DEV) {
+      console.log(`[${type.toUpperCase()}] ${message}`);
+    }
+
+    // Call registered callback if available
+    if (this.userMessageCallback) {
+      this.userMessageCallback(message, type);
+    }
   }
 
   /**
@@ -67,8 +123,14 @@ export class ErrorHandler {
       stack: error.stack,
       state: context.state,
     };
+    
+    // Log to console (structured format)
     console.error('Structured error log:', JSON.stringify(logEntry, null, 2));
+    
     // Future: Send to error tracking service (Sentry, Rollbar, etc.)
+    // if (import.meta.env.PROD) {
+    //   errorTrackingService.captureException(error, { extra: logEntry });
+    // }
   }
 }
 

@@ -1,0 +1,47 @@
+/**
+ * CSS for Pythagorean Identity visualization
+ * Per milestone 12: Interactive proof styling
+ */
+
+.pythagorean-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1em;
+}
+
+.pythagorean-identity__explanation {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pythagorean-identity__explanation p {
+  margin: 0.5em 0;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.pythagorean-identity__formula-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1em;
+  text-align: center;
+  margin: 0.75em 0;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.pythagorean-identity__visualization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.pythagorean-identity__svg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}

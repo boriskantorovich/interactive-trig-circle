@@ -1,0 +1,82 @@
+/**
+ * Double Angle Formulas styles
+ */
+
+.double-angle {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.double-angle__explanation {
+  line-height: 1.6;
+}
+
+.double-angle__formulas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+
+.double-angle__formula-card {
+  padding: 1em;
+  background-color: #f8f8f8;
+  border-left: 3px solid #0066cc;
+  border-radius: 4px;
+}
+
+.double-angle__formula-card h3 {
+  margin-top: 0;
+  color: #0066cc;
+}
+
+.double-angle__formula-text {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 0.5em 0;
+}
+
+.double-angle__calculation {
+  margin: 0.5em 0;
+  font-family: monospace;
+  color: #404040;
+  font-size: 0.95em;
+}
+
+.double-angle__verification {
+  margin: 0.5em 0;
+  color: #006600;
+  font-weight: 500;
+}
+
+.double-angle__visualization {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.double-angle__circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.double-angle__circle-container h4 {
+  margin: 0;
+  font-size: 1em;
+  color: #1a1a1a;
+}
+
+.double-angle__svg {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .double-angle__formulas,
+  .double-angle__visualization {
+    grid-template-columns: 1fr;
+  }
+}

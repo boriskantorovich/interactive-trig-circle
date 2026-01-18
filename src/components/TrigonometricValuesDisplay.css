@@ -1,0 +1,53 @@
+/**
+ * TrigonometricValuesDisplay component styles
+ * Per spec Section 5.2: Tufte-inspired design
+ * Component-based CSS with BEM-like naming: .component-name__element-name--modifier
+ */
+
+.trigonometric-values-display {
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border-light);
+  background-color: #fff;
+}
+
+.trigonometric-values-display__title {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-h2);
+  color: var(--color-text-dark);
+}
+
+.trigonometric-values-display__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.trigonometric-values-display__item {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border-subtle);
+  background-color: var(--color-bg);
+}
+
+.trigonometric-values-display__label {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-ui);
+  color: var(--color-text-medium);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.trigonometric-values-display__value {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text-dark);
+  font-variant-numeric: tabular-nums; /* Align numbers consistently */
+  word-break: break-word;
+}
+
+/* Highlight undefined values - applied via className modifier */
+.trigonometric-values-display__value--undefined {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}

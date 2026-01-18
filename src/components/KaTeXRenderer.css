@@ -1,0 +1,30 @@
+/**
+ * KaTeX renderer styles
+ * Per spec Section 5.2: Visual Style (Tufte-inspired)
+ */
+
+.katex-renderer {
+  display: inline-block;
+  margin: 0.5em 0;
+}
+
+.katex-renderer--error {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  padding: 0.5em;
+  border: 1px solid #cc0000;
+  border-radius: 4px;
+  background-color: #fff8f8;
+}
+
+.katex-renderer__error-text {
+  font-size: 0.875em;
+  color: #cc0000;
+  font-style: italic;
+}
+
+.katex-error {
+  color: #cc0000;
+  font-style: italic;
+}

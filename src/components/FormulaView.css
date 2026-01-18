@@ -1,0 +1,184 @@
+/**
+ * Formula view styles
+ * Per spec Section 5.2: Visual Style (Tufte-inspired)
+ */
+
+.formula-view {
+  margin: 2em 0;
+  padding: 1.5em;
+  border-top: 1px solid #e0e0e0;
+}
+
+.formula-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.formula-view__header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #2d2d2d;
+}
+
+.formula-view__mode-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.formula-view__mode-selector label {
+  font-size: 1em;
+  color: #2d2d2d;
+}
+
+.formula-view__mode-selector select {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #2d2d2d;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.formula-view__mode-selector select:hover {
+  border-color: #0066cc;
+}
+
+.formula-view__mode-selector select:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.formula-view__formula-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+  padding: 1em;
+  background-color: #fafafa;
+  border-radius: 4px;
+}
+
+.formula-view__formula-selector label {
+  font-size: 1em;
+  color: #2d2d2d;
+  font-weight: 500;
+}
+
+.formula-view__formula-selector select {
+  flex: 1;
+  max-width: 400px;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #2d2d2d;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.formula-view__formula-selector select:hover {
+  border-color: #0066cc;
+}
+
+.formula-view__formula-selector select:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.formula-view__formulas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5em;
+}
+
+.formula-view__formula-card {
+  padding: 1.5em;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.formula-view__formula-header {
+  margin-bottom: 1em;
+}
+
+.formula-view__formula-name {
+  margin: 0 0 0.5em 0;
+  font-size: 1.25em;
+  color: #2d2d2d;
+}
+
+.formula-view__formula-description {
+  margin: 0;
+  font-size: 0.9em;
+  color: #808080;
+  font-style: italic;
+}
+
+.formula-view__formula-katex {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #fafafa;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.formula-view__formula-visualization {
+  margin-top: 1em;
+  min-height: 100px;
+}
+
+.formula-view__empty {
+  padding: 2em;
+  text-align: center;
+  color: #808080;
+  font-style: italic;
+}
+
+.formula-view__formula-toggles {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  background-color: #fafafa;
+  border-radius: 4px;
+}
+
+.formula-view__formula-toggles h3 {
+  margin: 0 0 0.75em 0;
+  font-size: 1.1em;
+  color: #2d2d2d;
+}
+
+.formula-view__toggle-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.formula-view__toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #2d2d2d;
+}
+
+.formula-view__toggle-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #0066cc;
+}
+
+.formula-view__toggle-item:hover {
+  color: #0066cc;
+}

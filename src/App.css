@@ -15,6 +15,28 @@
   gap: var(--spacing-section);
 }
 
+/* Angle controls section (Milestone 6) */
+.app__angle-controls {
+  margin-bottom: var(--spacing-section);
+}
+
+/* Unit circle section */
+.app__unit-circle {
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border-light);
+  background-color: #fff;
+}
+
+/* Trigonometric values section (Milestone 7) */
+.app__trigonometric-values {
+  margin-bottom: var(--spacing-section);
+}
+
+/* Table view section (Milestone 10) */
+.app__table-view {
+  margin-bottom: var(--spacing-section);
+}
+
 /* Placeholder views */
 .app__placeholder {
   padding: var(--spacing-lg);

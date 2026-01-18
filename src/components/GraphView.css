@@ -1,0 +1,157 @@
+/**
+ * GraphView component styles
+ * Per spec Section 5.2: Visual Style (Tufte-inspired)
+ */
+
+.graph-view {
+  margin: 2em 0;
+}
+
+.graph-view__title {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: var(--color-text-dark);
+}
+
+.graph-view__tabs {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+}
+
+.graph-view__tab {
+  padding: 0.5em 1em;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-bg);
+  color: var(--color-text-medium);
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.graph-view__tab:hover {
+  background: #f0f0f0;
+  border-color: var(--color-primary);
+}
+
+.graph-view__tab--active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.graph-view__container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.graph-view__svg {
+  width: 100%;
+  height: auto;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+}
+
+.graph-view__grid {
+  opacity: 0.3;
+}
+
+.graph-view__grid-line {
+  stroke: var(--color-border-subtle);
+  stroke-width: 0.5;
+}
+
+.graph-view__grid-line--vertical {
+  stroke-dasharray: 2, 2;
+}
+
+.graph-view__grid-line--horizontal {
+  stroke-dasharray: 2, 2;
+}
+
+.graph-view__grid-label {
+  font-size: 10px;
+  fill: var(--color-text-medium);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.graph-view__axes {
+  stroke: var(--color-text-dark);
+  stroke-width: 1.5;
+}
+
+.graph-view__axis--x,
+.graph-view__axis--y {
+  stroke: var(--color-text-dark);
+}
+
+.graph-view__function-path {
+  stroke: var(--color-primary);
+  stroke-width: 2;
+  fill: none;
+}
+
+.graph-view__marker {
+  pointer-events: none;
+}
+
+.graph-view__marker-line {
+  stroke: var(--color-primary);
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+.graph-view__marker-point {
+  fill: var(--color-primary);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.graph-view__marker-label {
+  font-size: 11px;
+  fill: var(--color-text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+.graph-view__asymptotes {
+  pointer-events: none;
+}
+
+.graph-view__asymptote-line {
+  stroke: var(--color-error);
+  stroke-width: 1.5;
+  opacity: 0.6;
+}
+
+.graph-view__undefined {
+  pointer-events: none;
+}
+
+.graph-view__undefined-label {
+  font-size: 11px;
+  fill: var(--color-error);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+.graph-view__out-of-bounds {
+  pointer-events: none;
+}
+
+.graph-view__out-of-bounds-line {
+  stroke: var(--color-text-secondary);
+  stroke-width: 1;
+  opacity: 0.3;
+}
+
+.graph-view__out-of-bounds-label {
+  font-size: 11px;
+  fill: var(--color-text-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  opacity: 0.7;
+}
