@@ -1,0 +1,28 @@
+/* App-specific styles */
+/* Component-based CSS with BEM-like naming: .component-name__element-name--modifier */
+
+.app {
+  width: 100%;
+}
+
+.app__header {
+  margin-bottom: var(--spacing-section);
+}
+
+.app__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-section);
+}
+
+/* Placeholder views */
+.app__placeholder {
+  padding: var(--spacing-lg);
+  border: 1px dashed var(--color-border-light);
+  text-align: center;
+  color: var(--color-text-secondary);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
