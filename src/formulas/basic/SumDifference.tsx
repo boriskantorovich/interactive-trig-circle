@@ -9,6 +9,7 @@
  */
 
 import { useState } from 'react';
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import { Angle, type Angle as AngleType } from '../../core/Angle';
 import { TrigonometricValues } from '../../core/Trigonometry';
@@ -29,7 +30,7 @@ export class SumDifference extends BaseFormulaVisualization {
   readonly description =
     'The sum and difference formulas show how to calculate trigonometric functions of the sum or difference of two angles. These formulas are fundamental for understanding angle addition and subtraction.';
 
-  render(angle: AngleType): JSX.Element | null {
+  render(angle: AngleType): ReactElement | null {
     return <SumDifferenceVisualization currentAngle={angle} />;
   }
 }

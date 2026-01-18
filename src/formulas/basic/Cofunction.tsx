@@ -10,6 +10,7 @@
  * - cot(π/2 - θ) = tan(θ)
  */
 
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import { Angle, type Angle as AngleType } from '../../core/Angle';
 import { TrigonometricValues } from '../../core/Trigonometry';
@@ -30,7 +31,7 @@ export class Cofunction extends BaseFormulaVisualization {
   readonly description =
     'The cofunction identities show the symmetry between complementary angles. The sine of an angle equals the cosine of its complement, and vice versa.';
 
-  render(angle: AngleType): JSX.Element | null {
+  render(angle: AngleType): ReactElement | null {
     const trigValues = new TrigonometricValues(angle);
     const sinTheta = trigValues.sin();
     const cosTheta = trigValues.cos();

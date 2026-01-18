@@ -8,6 +8,7 @@
  * - cos(2θ) = cos²(θ) - sin²(θ)
  */
 
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import { Angle, type Angle as AngleType } from '../../core/Angle';
 import { TrigonometricValues } from '../../core/Trigonometry';
@@ -28,7 +29,7 @@ export class DoubleAngle extends BaseFormulaVisualization {
   readonly description =
     'The double angle formulas show how to calculate trigonometric functions of twice an angle. These formulas are useful for simplifying expressions and solving equations.';
 
-  render(angle: AngleType): JSX.Element | null {
+  render(angle: AngleType): ReactElement | null {
     const trigValues = new TrigonometricValues(angle);
     const sinTheta = trigValues.sin();
     const cosTheta = trigValues.cos();

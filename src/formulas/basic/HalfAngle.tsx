@@ -10,6 +10,7 @@
  * The sign depends on which quadrant θ/2 is in.
  */
 
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import { Angle, type Angle as AngleType } from '../../core/Angle';
 import { TrigonometricValues } from '../../core/Trigonometry';
@@ -30,7 +31,7 @@ export class HalfAngle extends BaseFormulaVisualization {
   readonly description =
     'The half angle formulas show how to calculate trigonometric functions of half an angle. The sign (±) depends on which quadrant the half angle is in.';
 
-  render(angle: AngleType): JSX.Element | null {
+  render(angle: AngleType): ReactElement | null {
     const trigValues = new TrigonometricValues(angle);
     const cosTheta = trigValues.cos();
 

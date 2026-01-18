@@ -243,7 +243,7 @@ export function renderFunctionLines(
 function renderSinLine(
   point: Point,
   pointSvg: { x: number; y: number },
-  originSvg: { x: number; y: number },
+  _originSvg: { x: number; y: number },
   sinValue: number,
   labelOptions: {
     showLabels: boolean;
@@ -288,7 +288,7 @@ function renderSinLine(
 function renderCosLine(
   point: Point,
   pointSvg: { x: number; y: number },
-  originSvg: { x: number; y: number },
+  _originSvg: { x: number; y: number },
   cosValue: number,
   labelOptions: {
     showLabels: boolean;
@@ -331,10 +331,10 @@ function renderCosLine(
  * Per spec Section 8.1: tan(π/2) show asymptote, undefined value
  */
 function renderTanLine(
-  angle: Angle,
+  _angle: Angle,
   point: Point,
   pointSvg: { x: number; y: number },
-  originSvg: { x: number; y: number },
+  _originSvg: { x: number; y: number },
   tanValue: number | null,
   isUndefined: boolean,
   labelOptions: {
@@ -430,10 +430,10 @@ function renderTanLine(
  * Per spec Section 8.1: cot(0) show undefined value
  */
 function renderCotLine(
-  angle: Angle,
+  _angle: Angle,
   point: Point,
   pointSvg: { x: number; y: number },
-  originSvg: { x: number; y: number },
+  _originSvg: { x: number; y: number },
   cotValue: number | null,
   isUndefined: boolean,
   labelOptions: {
@@ -528,10 +528,10 @@ function renderCotLine(
  * Per spec Section 2.2.2: sec(θ) shown as line from origin extending beyond circle
  */
 function renderSecLine(
-  angle: Angle,
-  point: Point,
-  pointSvg: { x: number; y: number },
-  originSvg: { x: number; y: number },
+  _angle: Angle,
+  _point: Point,
+  _pointSvg: { x: number; y: number },
+  _originSvg: { x: number; y: number },
   secValue: number | null,
   isUndefined: boolean,
   labelOptions: {
@@ -607,10 +607,10 @@ function renderSecLine(
  * Per spec Section 2.2.2: csc(θ) shown as line from origin extending beyond circle
  */
 function renderCscLine(
-  angle: Angle,
-  point: Point,
-  pointSvg: { x: number; y: number },
-  originSvg: { x: number; y: number },
+  _angle: Angle,
+  _point: Point,
+  _pointSvg: { x: number; y: number },
+  _originSvg: { x: number; y: number },
   cscValue: number | null,
   isUndefined: boolean,
   labelOptions: {

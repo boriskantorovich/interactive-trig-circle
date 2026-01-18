@@ -8,6 +8,7 @@
  */
 
 /* eslint-disable react-refresh/only-export-components */
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import type { Angle } from '../../core/Angle';
 import { useState, useMemo } from 'react';
@@ -344,7 +345,7 @@ export class FourierSeries extends BaseFormulaVisualization {
   readonly description =
     'Fourier series decompose periodic functions into infinite sums of sin and cos terms. Explore how adding more terms improves the approximation of square and sawtooth waves.';
 
-  render(angle: Angle): JSX.Element | null {
+  render(angle: Angle): ReactElement | null {
     return <FourierSeriesVisualization angle={angle} />;
   }
 }

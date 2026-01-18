@@ -8,6 +8,7 @@
  * Live updates with θ
  */
 
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import type { Angle } from '../../core/Angle';
 import { TrigonometricValues } from '../../core/Trigonometry';
@@ -28,7 +29,7 @@ export class PythagoreanIdentity extends BaseFormulaVisualization {
   readonly description =
     'The fundamental trigonometric identity: the sum of the squares of sine and cosine always equals 1. This is a direct consequence of the Pythagorean theorem applied to the unit circle.';
 
-  render(angle: Angle): JSX.Element | null {
+  render(angle: Angle): ReactElement | null {
     const trigValues = new TrigonometricValues(angle);
     const sinValue = trigValues.sin();
     const cosValue = trigValues.cos();

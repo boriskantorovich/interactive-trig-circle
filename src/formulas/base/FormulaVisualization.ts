@@ -4,6 +4,7 @@
  * Per spec Section 4.2.1: Module Structure
  */
 
+import type { ReactElement } from 'react';
 import type { DifficultyLevel } from '../../state/AppState';
 import type { Angle } from '../../core/Angle';
 
@@ -41,7 +42,7 @@ export interface FormulaVisualization {
    * Render function that returns JSX
    * @param angle Current angle from store
    */
-  render: (angle: Angle) => JSX.Element | null;
+  render: (angle: Angle) => ReactElement | null;
 }
 
 /**
@@ -59,5 +60,5 @@ export abstract class BaseFormulaVisualization implements FormulaVisualization {
    * Render the formula visualization
    * Must be implemented by subclasses
    */
-  abstract render(angle: Angle): JSX.Element | null;
+  abstract render(angle: Angle): ReactElement | null;
 }

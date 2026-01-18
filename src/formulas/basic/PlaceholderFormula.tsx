@@ -3,6 +3,7 @@
  * This will be replaced by actual formulas in milestone 12+
  */
 
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import type { Angle } from '../../core/Angle';
 
@@ -17,7 +18,7 @@ export class PlaceholderFormula extends BaseFormulaVisualization {
   readonly katexFormula = '\\sin^2(\\theta) + \\cos^2(\\theta) = 1';
   readonly description = 'This is a placeholder formula for testing the formula system.';
 
-  render(angle: Angle): JSX.Element | null {
+  render(angle: Angle): ReactElement | null {
     return (
       <div style={{ padding: '1em', textAlign: 'center', color: '#808080' }}>
         <p>Formula visualization will appear here.</p>

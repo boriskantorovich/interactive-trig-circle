@@ -7,6 +7,7 @@
  * Shows conversion between polar (r, θ) and Cartesian (x, y) coordinates
  */
 
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import type { Angle } from '../../core/Angle';
 import { TrigonometricValues } from '../../core/Trigonometry';
@@ -27,7 +28,7 @@ export class PolarCoordinates extends BaseFormulaVisualization {
   readonly description =
     'Polar coordinates represent points using distance from origin (r) and angle (θ). On the unit circle, r = 1, so x = cos(θ) and y = sin(θ).';
 
-  render(angle: Angle): JSX.Element | null {
+  render(angle: Angle): ReactElement | null {
     const trigValues = new TrigonometricValues(angle);
     const sinValue = trigValues.sin();
     const cosValue = trigValues.cos();

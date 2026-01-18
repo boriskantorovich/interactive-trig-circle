@@ -97,7 +97,7 @@ describe('TableView', () => {
     });
     
     expect(highlightedRow).not.toBeNull();
-    expect(highlightedRow?.textContent).toContain('π/4');
+    expect((highlightedRow as unknown as Element).textContent).toContain('π/4');
   });
 
   it('calls setAngle when row is clicked', () => {
@@ -164,7 +164,7 @@ describe('TableView', () => {
     });
     
     expect(highlightedRow).not.toBeNull();
-    expect(highlightedRow?.textContent).toContain('π/6');
+    expect((highlightedRow as unknown as Element).textContent).toContain('π/6');
   });
 
   it('renders all 8 common angles', () => {

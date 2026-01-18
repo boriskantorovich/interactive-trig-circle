@@ -301,7 +301,7 @@ function generateCscPathSegments(config: GraphConfig): string[] {
  * Get function value at angle
  */
 function getFunctionValue(
-  angle: Angle,
+  _angle: Angle,
   functionName: GraphFunction,
   trigValues: TrigonometricValues
 ): number | null {

@@ -6,6 +6,7 @@
  * Euler: e^(iθ) = cos θ + i sin θ in complex plane
  */
 
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import type { Angle } from '../../core/Angle';
 import { TrigonometricValues } from '../../core/Trigonometry';
@@ -26,7 +27,7 @@ export class ComplexNumbers extends BaseFormulaVisualization {
   readonly description =
     "Euler's formula connects complex exponentials with trigonometric functions. On the unit circle, e^(iθ) represents a point with real part cos(θ) and imaginary part sin(θ).";
 
-  render(angle: Angle): JSX.Element | null {
+  render(angle: Angle): ReactElement | null {
     const trigValues = new TrigonometricValues(angle);
     const sinValue = trigValues.sin();
     const cosValue = trigValues.cos();

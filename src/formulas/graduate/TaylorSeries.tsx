@@ -8,6 +8,7 @@
  */
 
 /* eslint-disable react-refresh/only-export-components */
+import type { ReactElement } from 'react';
 import { BaseFormulaVisualization } from '../base/FormulaVisualization';
 import type { Angle } from '../../core/Angle';
 import { useState, useMemo } from 'react';
@@ -445,7 +446,7 @@ export class TaylorSeries extends BaseFormulaVisualization {
   readonly description =
     'Taylor series approximate functions using polynomial expansions. Explore how adding more terms improves the approximation of sin and cos functions.';
 
-  render(angle: Angle): JSX.Element | null {
+  render(angle: Angle): ReactElement | null {
     return <TaylorSeriesVisualization angle={angle} />;
   }
 }
