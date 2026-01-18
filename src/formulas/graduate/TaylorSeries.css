@@ -1,0 +1,108 @@
+/**
+ * Taylor Series visualization styles
+ * Per milestone 15: Graduate modules
+ */
+
+.taylor-series {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1.5em;
+}
+
+.taylor-series__explanation {
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.taylor-series__explanation p {
+  margin: 0.5em 0;
+}
+
+.taylor-series__explanation ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.taylor-series__explanation li {
+  margin: 0.25em 0;
+  font-family: 'Courier New', monospace;
+}
+
+.taylor-series__controls {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  padding: 1em;
+  background-color: var(--color-border-subtle);
+  border-radius: 4px;
+}
+
+.taylor-series__control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  min-width: 200px;
+}
+
+.taylor-series__control-group label {
+  font-size: 0.9em;
+  color: var(--color-text-medium);
+  font-weight: 500;
+}
+
+.taylor-series__control-group select,
+.taylor-series__control-group input[type="range"] {
+  padding: 0.5em;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1em;
+  background-color: white;
+}
+
+.taylor-series__control-group input[type="range"] {
+  cursor: pointer;
+}
+
+.taylor-series__formula {
+  padding: 1em;
+  background-color: var(--color-border-subtle);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 4px;
+}
+
+
+.taylor-series__visualization {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.taylor-series__svg {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.taylor-series__info {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: var(--color-text);
+  padding: 1em;
+  background-color: var(--color-border-subtle);
+  border-radius: 4px;
+}
+
+.taylor-series__info p {
+  margin: 0.5em 0;
+}
+
+.taylor-series__note {
+  font-size: 0.9em;
+  color: var(--color-text-medium);
+  font-style: italic;
+  margin-top: 1em;
+}

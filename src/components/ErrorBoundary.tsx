@@ -1,8 +1,10 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
+import { errorHandler } from '../error/ErrorHandler';
 
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
+  componentName?: string; // Optional component name for better error context
 }
 
 interface State {
@@ -15,6 +17,7 @@ interface State {
  * ErrorBoundary component
  * Per spec Section 4.3.7: React ErrorBoundary component wraps main app and individual views
  * Catches React rendering errors and shows fallback UI
+ * Per milestone 16: Enhanced with structured logging
  */
 export class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
@@ -35,8 +38,19 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    // Log error for debugging
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
+    // Log error with structured logging
+    errorHandler.fatal(
+      `React rendering error in ${this.props.componentName || 'component'}: ${error.message}`,
+      {
+        component: this.props.componentName || 'ErrorBoundary',
+        action: 'componentDidCatch',
+        state: {
+          errorStack: error.stack,
+          componentStack: errorInfo.componentStack,
+        },
+      }
+    );
+
     this.setState({
       error,
       errorInfo,

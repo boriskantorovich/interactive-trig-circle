@@ -1,0 +1,59 @@
+/**
+ * Complex Numbers formula visualization styles
+ * Per milestone 14: College-level expansions
+ */
+
+.complex-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1.5em;
+}
+
+.complex-numbers__explanation {
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.complex-numbers__explanation ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.complex-numbers__explanation li {
+  margin: 0.25em 0;
+}
+
+.complex-numbers__formula-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2em;
+  margin: 0.75em 0;
+  padding: 0.75em;
+  background-color: var(--color-border-subtle);
+  border-left: 3px solid var(--color-primary);
+  text-align: center;
+}
+
+.complex-numbers__values {
+  font-size: 1em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  background-color: var(--color-border-subtle);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.complex-numbers__note {
+  font-size: 0.9em;
+  color: var(--color-text-medium);
+  font-style: italic;
+  margin-top: 0.5em;
+}
+
+.complex-numbers__visualization {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 1em auto;
+}

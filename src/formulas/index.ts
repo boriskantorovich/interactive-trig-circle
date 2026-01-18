@@ -10,6 +10,10 @@ import { SumDifference } from './basic/SumDifference';
 import { DoubleAngle } from './basic/DoubleAngle';
 import { HalfAngle } from './basic/HalfAngle';
 import { Cofunction } from './basic/Cofunction';
+import { PolarCoordinates } from './advanced/PolarCoordinates';
+import { ComplexNumbers } from './advanced/ComplexNumbers';
+import { FourierSeries } from './graduate/FourierSeries';
+import { TaylorSeries } from './graduate/TaylorSeries';
 
 /**
  * Initialize formula registry with all available formulas
@@ -27,4 +31,12 @@ export function initializeFormulas(): void {
   formulaRegistry.register(new DoubleAngle());
   formulaRegistry.register(new HalfAngle());
   formulaRegistry.register(new Cofunction());
+
+  // Milestone 14: College-level expansions
+  formulaRegistry.register(new PolarCoordinates());
+  formulaRegistry.register(new ComplexNumbers());
+
+  // Milestone 15: Graduate modules
+  formulaRegistry.register(new FourierSeries());
+  formulaRegistry.register(new TaylorSeries());
 }

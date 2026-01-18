@@ -4,7 +4,7 @@
  * Per spec Section 2.3.8: Formula Visualization Modes
  */
 
-import { useMemo, useEffect } from 'react';
+import { useMemo, useEffect, useRef } from 'react';
 import './FormulaView.css';
 import { useStore } from '../state/store';
 import { useCurrentAngle } from '../state/store';
@@ -34,21 +34,39 @@ export function FormulaView() {
     return formulaRegistry.getByDifficultyLevel(difficultyLevel);
   }, [difficultyLevel]);
 
+  // Track which formula set we've initialized to avoid re-initializing
+  const initializedFormulasRef = useRef<string>('');
+
   // Initialize enabled formulas in hybrid mode (enable all by default)
+  // Only run when mode changes to hybrid or available formulas change (NOT when enabledFormulas changes)
   useEffect(() => {
     if (formulaViewMode === 'hybrid' && availableFormulas.length > 0) {
-      // Check if any formulas are missing from enabledFormulas
-      const missingFormulas = availableFormulas.filter(
-        (f) => !enabledFormulas.has(f.id)
-      );
-      if (missingFormulas.length > 0) {
+      const currentFormulaIds = availableFormulas.map((f) => f.id).sort().join(',');
+      
+      // Only initialize if the formula list has changed (not on every toggle)
+      if (initializedFormulasRef.current !== currentFormulaIds) {
+        initializedFormulasRef.current = currentFormulaIds;
+        
+        // Get current enabled formulas from store (read directly, not from dependency)
+        const currentEnabled = useStore.getState().enabledFormulas;
+        
+        // Check which formulas are missing from enabledFormulas
+        const missingFormulas = availableFormulas.filter(
+          (f) => !currentEnabled.has(f.id)
+        );
+        
         // Enable all available formulas by default
-        missingFormulas.forEach((formula) => {
-          setFormulaEnabled(formula.id, true);
-        });
+        if (missingFormulas.length > 0) {
+          missingFormulas.forEach((formula) => {
+            setFormulaEnabled(formula.id, true);
+          });
+        }
       }
+    } else if (formulaViewMode !== 'hybrid') {
+      // Reset when switching away from hybrid mode
+      initializedFormulasRef.current = '';
     }
-  }, [formulaViewMode, availableFormulas, enabledFormulas, setFormulaEnabled]);
+  }, [formulaViewMode, availableFormulas, setFormulaEnabled]);
 
   // Determine which formulas to display based on view mode
   const formulasToDisplay = useMemo(() => {

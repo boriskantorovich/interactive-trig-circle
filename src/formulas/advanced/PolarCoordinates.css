@@ -1,0 +1,50 @@
+/**
+ * Polar Coordinates formula visualization styles
+ * Per milestone 14: College-level expansions
+ */
+
+.polar-coordinates {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1.5em;
+}
+
+.polar-coordinates__explanation {
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.polar-coordinates__explanation ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.polar-coordinates__explanation li {
+  margin: 0.25em 0;
+}
+
+.polar-coordinates__formula-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  background-color: var(--color-border-subtle);
+  border-left: 3px solid var(--color-primary);
+}
+
+.polar-coordinates__values {
+  font-size: 1em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  background-color: var(--color-border-subtle);
+  border-radius: 4px;
+}
+
+.polar-coordinates__visualization {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 1em auto;
+}
